@@ -4,11 +4,7 @@ image:
 
 tasks:
   - command: |
-      deno run --allow-net --unstable webserver.ts
-
-ports:
-  - port: 8080
-    onOpen: open-preview
+      deno run --A --unstable mod.ts
 
 vscode:
   extensions:
