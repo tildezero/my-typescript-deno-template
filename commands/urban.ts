@@ -8,7 +8,6 @@ export default class UrbanCommand extends Command {
         if (!ctx.argString) {
             return await ctx.message.channel.send("`.urban query`")
         } 
-        console.log(ctx.argString)
         const query = encodeURIComponent(ctx.argString)
         const req = await fetch(`https://api.urbandictionary.com/v0/define?term=${query}`)
         const res = await req.json()
