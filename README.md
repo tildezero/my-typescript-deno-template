@@ -1,4 +1,7 @@
 # tsfoo
-github.com/tildezero/foobot but ts
-deno.land/x/harmony
-deno.land/x/puppeteer
+
+https://github.com/tildezero/foobot but ts
+
+https://deno.land/x/harmony
+
+https://deno.land/x/puppeteer
