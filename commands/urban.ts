@@ -1,4 +1,4 @@
-import { Command, CommandContext } from "../deps.ts"
+import { Command, CommandContext, Collector, MessageComponentType, ButtonStyle  } from "../deps.ts"
 
 export default class UrbanCommand extends Command {
     name = "urban"
@@ -11,6 +11,19 @@ export default class UrbanCommand extends Command {
         const query = encodeURIComponent(ctx.argString)
         const req = await fetch(`https://api.urbandictionary.com/v0/define?term=${query}`)
         const res = await req.json()
-        await ctx.message.channel.send(res.list[0].definition)
+        await ctx.message.channel.send(res.list[0].definition, {components: [
+            {
+                type: MessageComponentType.ActionRow, 
+                components: [
+                    {
+                        type: MessageComponentType.Button,
+                        style: ButtonStyle.DESTRUCTIVE,
+                        label: "delete",
+                        customID: "delete"
+                    }
+                ]
+            }
+        ]})
+        
     }
 }
