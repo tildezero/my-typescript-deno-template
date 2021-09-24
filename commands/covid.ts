@@ -15,7 +15,7 @@ export default class CovidCommand extends Command {
         if (!ss) {
             return ctx.message.channel.send("oopsies")
         }
-        const att = new MessageAttachment("covid", ss) 
+        const att = new MessageAttachment("covid.png", ss) 
         await ctx.message.channel.send({file: att})
     }
 }
