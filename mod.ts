@@ -12,7 +12,7 @@ client.commands.loader.loadDirectory("./commands/")
 client.on("interactionCreate", async (i) => {
     if (isMessageComponentInteraction(i)) {
         const d = i as MessageComponentInteraction
-        if (d.customID === "delete" && d.message.author === client.user) {
+        if (d.customID === "delete") {
             await d.message.delete()
             await d.respond({content: "message deleted"})
         }
