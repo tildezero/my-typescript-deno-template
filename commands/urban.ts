@@ -1,4 +1,4 @@
-import { Command, CommandContext, Collector, MessageComponentType, ButtonStyle  } from "../deps.ts"
+import { Command, CommandContext, MessageComponentType, ButtonStyle } from "../deps.ts"
 
 export default class UrbanCommand extends Command {
     name = "urban"
