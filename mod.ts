@@ -14,7 +14,7 @@ client.on("interactionCreate", async (i) => {
         const d = i as MessageComponentInteraction
         if (d.customID === "delete") {
             await d.message.delete()
-            await d.respond({content: "message deleted"})
+            await d.respond({content: `message deleted by <@${d.user.id}>`})
         }
     }
 })
