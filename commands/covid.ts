@@ -4,6 +4,7 @@ import puppeteer from "https://deno.land/x/puppeteer@9.0.1/mod.ts";
 export default class CovidCommand extends Command {
     name = "covid"
     description = "covid check"
+    aliases = 'c'
 
 
     async execute(ctx: CommandContext) {

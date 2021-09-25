@@ -3,6 +3,7 @@ import { Command, CommandContext, MessageComponentType, ButtonStyle } from "../d
 export default class UrbanCommand extends Command {
     name = "urban"
     description = "searches something on urban dictionary"
+    aliases = 'u'
 
     async execute(ctx: CommandContext) {
         if (!ctx.argString) {
