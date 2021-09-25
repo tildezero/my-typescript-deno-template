@@ -10,7 +10,6 @@ export default class TranslateCommand extends Command {
         const language = ctx.rawArgs[0]
         ctx.rawArgs.shift()
         const query = ctx.rawArgs.join(" ")
-        console.log(query)
         const req = await fetch(`https://lingva.ml/api/v1/auto/${language}/${query}`)
         const res = await req.json()
         await ctx.message.channel.send(res.translation)
