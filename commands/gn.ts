@@ -7,7 +7,7 @@ export default class GNCommand extends Command {
 
     async execute(ctx: CommandContext) {
         
-        if (!ctx.rawArgs) return await ctx.message.channel.send(`${ctx.author.mention} says good night`)
+        if (ctx.rawArgs.length === 0) return await ctx.message.channel.send(`${ctx.author.mention} says good night`)
 
         const cmdargs: Args[] = [
             {
