@@ -1,6 +1,6 @@
 import { Command, CommandContext } from '../deps.ts'
 
-export class CalcCommand extends Command {
+export default class CalcCommand extends Command {
     name = "calc"
     description = "calculate something"
 
