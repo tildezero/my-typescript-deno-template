@@ -3,9 +3,9 @@ import { Command, CommandContext } from '../deps.ts'
 export default class EvalCommand extends Command {
     name = "eval"
     description = "evaluate something"
-    ownerOnly = true
 
     async execute(ctx: CommandContext) {
+       if (ctx.author.id !== "435206857276260353") return await ctx.message.channel.send("no")
        if (ctx.rawArgs.length < 1) return await ctx.message.channel.send("eval something stupid") 
        try {
            let ev = await eval(ctx.argString)
