@@ -1,6 +1,6 @@
 import { Command, CommandContext } from '../deps.ts'
 
-export default class CalcCommand extends Command {
+export default class EvalCommand extends Command {
     name = "eval"
     description = "evaluate something"
     ownerOnly = true
