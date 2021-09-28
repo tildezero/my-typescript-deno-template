@@ -1,4 +1,4 @@
-import { Command, CommandContext, Args, User, parseArgs } from "../deps.ts";
+import { Command, CommandContext, Args, User, parseArgs, Embed } from "../deps.ts";
 
 export default class BeanCommand extends Command {
     name = "bean"
@@ -19,6 +19,7 @@ export default class BeanCommand extends Command {
         const pargs = await parseArgs(cmdargs, ctx.rawArgs, ctx.message)
         const u = pargs?.person as User
         const r = pargs?.reason as string
-        await ctx.message.channel.send({embed: {description: `✅ ***${u.username}#${u.discriminator} was beaned*** | ${r}`}})
+        const e = new Embed({description: `✅ ***${u.username}#${u.discriminator} was beaned*** | ${r}`})
+        await ctx.message.channel.send({embed: e}) 
     }
 }
