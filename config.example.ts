@@ -1,3 +1,4 @@
 export const config = {
-    token: "TOKEN"
+    token: "TOKEN",
+    pxlkey: "https://pxlapi.dev"
 }
