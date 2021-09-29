@@ -1,7 +1,7 @@
 import { Command, CommandContext } from "../deps.ts";
 import { config } from "../config.ts"
 
-export default class Image extends Command {
+export default class ImageCommand extends Command {
     name = "image"
     aliases = ['is']
 
