@@ -7,7 +7,7 @@ export default class WeatherCommand extends Command {
     aliases = ['wttr', 'w']
 
     async execute(ctx: CommandContext) {
-        const loc = ctx.argString ?? "Austin"
+        const loc = ctx.argString ?? 'austin tx'
         const codes: any = {
             "113": "Sunny",
             "116": "PartlyCloudy",
