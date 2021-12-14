@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { Command, CommandContext } from '../deps.ts'
 
 export default class WeatherCommand extends Command {
@@ -7,7 +8,7 @@ export default class WeatherCommand extends Command {
 
     async execute(ctx: CommandContext) {
         const loc = ctx.argString ?? "Austin"
-        const codes = {
+        const codes: any = {
             "113": "Sunny",
             "116": "PartlyCloudy",
             "119": "Cloudy",
@@ -58,7 +59,7 @@ export default class WeatherCommand extends Command {
             "395": "HeavySnowShowers",
         }
         
-        const symbols = {
+        const symbols: any = {
             "Unknown":             "✨",
             "Cloudy":              "☁️",
             "Fog":                 "🌫",
