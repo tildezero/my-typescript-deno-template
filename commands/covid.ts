@@ -1,5 +1,6 @@
 import { Command, CommandContext, MessageAttachment } from '../deps.ts'
 import puppeteer from "https://deno.land/x/puppeteer@9.0.1/mod.ts";
+import { config } from '../config.ts'
 
 export default class CovidCommand extends Command {
     name = "covid"
@@ -10,7 +11,7 @@ export default class CovidCommand extends Command {
     async execute(ctx: CommandContext) {
         const browser = await puppeteer.launch()
         const page = await browser.newPage()
-        await page.goto("https://view-awesome-table.com/-MGy-B0VX5sZp1jdKNqb/view?filterA=Round%20Rock%20High")
+        await page.goto(config.awesomeTableLink)
         await page.waitForSelector(".card-content")
         const ss = await page.screenshot();
         if (!ss) {
