@@ -1,5 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 import { Command, CommandContext } from '../deps.ts'
+import { config } from '../config.ts'
 
 export default class WeatherCommand extends Command {
     name = "weather"
@@ -8,7 +9,7 @@ export default class WeatherCommand extends Command {
 
     async execute(ctx: CommandContext) {
         let loc;
-        if (ctx.rawArgs.length > 0) { loc = ctx.argString } else loc = 'austin tx' 
+        if (ctx.rawArgs.length > 0) { loc = ctx.argString } else loc = config.defaultWeatherLocation;
         const codes: any = {
             "113": "Sunny",
             "116": "PartlyCloudy",
