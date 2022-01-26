@@ -1,7 +1,7 @@
 import { Command, CommandContext } from "../deps.ts";
 
-export default class PingCommand extends Command {
-    name = "start"
+export default class StopCommand extends Command {
+    name = "stop"
     description = "more trolling"
     ownerOnly = true
 

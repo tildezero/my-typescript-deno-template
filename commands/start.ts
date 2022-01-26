@@ -1,6 +1,6 @@
 import { Command, CommandContext } from "../deps.ts";
 
-export default class PingCommand extends Command {
+export default class StartCommand extends Command {
     name = "start"
     description = "trolling"
     ownerOnly = true

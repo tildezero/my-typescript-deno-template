@@ -1,9 +1,8 @@
 import { Command, CommandContext } from "../deps.ts"
 
 export default class TranslateCommand extends Command {
-    name = "translate"
-    aliases = ['tr']
-    description = "translates something"
+    name = "cat"
+    description = "gato"
 
     async execute(ctx: CommandContext) {
         const req = await fetch(`https://aws.random.cat/meow`)
